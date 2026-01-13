@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Teaching
 summary: My courses
 type: landing
@@ -13,6 +13,7 @@ sections:
   - block: collection
     id: teaching
     content:
+      active: false
       title: Teaching
       filters:
         folders:
@@ -20,4 +21,4 @@ sections:
     design:
       view: article-grid
       columns: 2
----
+--- -->
