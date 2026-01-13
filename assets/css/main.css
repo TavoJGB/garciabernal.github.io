@@ -2230,6 +2230,10 @@ input, select, textarea {
 				font-size: 1.06em;
 				letter-spacing: 0.04em;
 			}
+			
+			#header .position {
+				font-size: 1.5em;
+			}
 
 		#header .button {
 			display: inline-block;
@@ -2262,8 +2266,59 @@ input, select, textarea {
 		min-height: 40em;
 	}
 
+	body.homepage #header header {
+		display: block;
+	}
+
+	body.homepage #header .home-hero {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5em;
+		text-align: left;
+	}
+
+	body.homepage #header .home-hero__photo {
+		flex: 0 0 auto;
+	}
+
+	body.homepage #header .home-hero__photo img {
+		display: block;
+		width: 400px;
+		height: 400px;
+		border-radius: 100%;
+		object-fit: cover;
+		object-position: 50% var(--home-hero-photo-y, 15%);
+		border: solid 3px rgba(255, 255, 255, 0.25);
+		box-shadow: 0 0.35em 1.25em rgba(0, 0, 0, 0.35);
+	}
+
+	body.homepage #header .home-hero__text {
+		flex: 0 1 auto;
+	}
+
+	body.homepage #header .home-hero__text > p {
+		font-size: 1.25em;
+		margin: 0;
+	}
+
 		body.homepage #header h1 {
 			font-size: 4em;
+		}
+
+		@media screen and (max-width: 736px) {
+
+			body.homepage #header .home-hero {
+				flex-direction: column;
+				text-align: center;
+				gap: 1em;
+			}
+
+			body.homepage #header .home-hero__photo img {
+				width: 120px;
+				height: 120px;
+			}
+
 		}
 
 		body.homepage #header:after {
