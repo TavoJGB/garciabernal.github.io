@@ -1000,7 +1000,7 @@
 	#footer {
 		position: relative;
 		overflow: hidden;
-		padding: 6em 0 6em 0;
+		padding: 1em 0 1em 0;
 		background: #2b252c;
 		color: #fff;
 
@@ -1030,8 +1030,14 @@
 		.copyright {
 			text-align: center;
 			color: rgba(128, 128, 128, 0.75);
-			font-size: 0.8em;
+			font-size: 0.75em;
+			line-height: 1.25em;
+			margin: 0;
 			cursor: default;
+
+			ul.menu {
+				margin: 0;
+			}
 
 			a {
 				color: rgba(128, 128, 128, 0.75);
@@ -1257,7 +1263,7 @@
 		/* Footer */
 
 			#footer {
-				padding: 4em 2em 4em 2em;
+				padding: 2.5em 2em 2.5em 2em;
 			}
 
 		/* Carousel */
