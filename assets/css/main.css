@@ -5,11 +5,20 @@
 /* Theme variables */
 
 	:root {
+		/* Main colors */
 		--coloruno: #1a1a1a;
-		--colordos: #228947;
+		--colordos: #323232;
 		--colortres: #7c7c7c;
-		--colorboton: #df7366;
-		--colorboton-hover: #ef8376;
+		--colorcuatro: #228947;
+		/* Navigation menu */
+		--colornav: var(--colordos);
+		--colornav-texto: #ffffff;
+		/* Footer */
+		--colorpie: var(--colordos);
+		--colorpie-texto: #ffffff;
+		/* Buttons */
+		--colorboton: var(--colorcuatro);
+		--colorboton-hover: var(--colorcuatro);
 	}
 
 /*
@@ -130,8 +139,10 @@ input, select, textarea {
 		font-variant: small-caps;
 		font-variant-caps: small-caps;
 		font-weight: 400;
-		font-size: 1.06em;
-		letter-spacing: 0.04em;
+		font-size: 1.05em;
+		display: inline-block;
+		transform: scaleX(1.1);
+		transform-origin: left;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -159,7 +170,6 @@ input, select, textarea {
 
 	strong, b {
 		font-weight: 400;
-		color: #483949;
 	}
 
 	em, i {
@@ -2245,12 +2255,8 @@ input, select, textarea {
 				font-variant: small-caps;
 				font-variant-caps: small-caps;
 				font-weight: 800;
-				font-size: 1.06em;
-				letter-spacing: 0.04em;
-			}
-			
-			#header .position {
-				font-size: 1.5em;
+				font-size: 1.05em;
+				/* letter-spacing: 0.05em; */
 			}
 
 		#header .button {
@@ -2292,7 +2298,7 @@ input, select, textarea {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 1.5em;
+		gap: 4em;
 		text-align: left;
 	}
 
@@ -2316,12 +2322,15 @@ input, select, textarea {
 	}
 
 	body.homepage #header .home-hero__text > p {
-		font-size: 1.25em;
-		margin: 0;
+		font-size: 1.1em;
+		line-height: 1.55em;
+		margin: 0.9em 0 0 0;
+		max-width: 58ch;
+		opacity: 0.92;
 	}
 
 		body.homepage #header h1 {
-			font-size: 4em;
+			font-size: 2.5em;
 		}
 
 		@media screen and (max-width: 736px) {
@@ -2330,6 +2339,12 @@ input, select, textarea {
 				flex-direction: column;
 				text-align: center;
 				gap: 1em;
+			}
+
+			body.homepage #header .home-hero__text > p {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 42ch;
 			}
 
 			body.homepage #header .home-hero__photo img {
@@ -2353,15 +2368,33 @@ input, select, textarea {
 
 /* Nav */
 
-	#nav {
+	/* Fallback: before nav.js wraps #nav in #nav-wrapper */
+	#header > #nav {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
-		text-align: center;
-		padding: 1.5em 0 1.5em 0;
+		padding: 1em 0 1em 0;
+		background: var(--colornav);
 		z-index: 1;
 		overflow: hidden;
+		text-align: center;
+	}
+
+	#nav-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 1em 0 1em 0;
+		background: var(--colornav);
+		z-index: 1;
+		overflow: hidden;
+	}
+
+	#nav {
+		text-align: center;
+		width: 100%;
 	}
 
 		#nav > ul {
@@ -2525,13 +2558,13 @@ input, select, textarea {
 		position: relative;
 		overflow: hidden;
 		padding: 1em 0 1em 0;
-		background: var(--colordos);
+		background: var(--colorpie);
 		color: #fff;
 	}
 
 		#footer .icon.circled {
 			background: #fff;
-			color: var(--colordos);
+			color: var(--colorpie);
 		}
 
 		#footer header {
@@ -2554,7 +2587,7 @@ input, select, textarea {
 
 		#footer .copyright {
 			text-align: center;
-			color: #fff;
+			color: var(--colorpie-texto);
 			font-size: 0.75em;
 			line-height: 1.25em;
 			margin: 0;
@@ -2566,7 +2599,7 @@ input, select, textarea {
 			}
 
 			#footer .copyright a {
-				color: #fff;
+				color: var(--colorpie-texto);
 			}
 
 				#footer .copyright a:hover {
@@ -3156,6 +3189,10 @@ input, select, textarea {
 				}
 
 		/* Nav */
+
+			#nav-wrapper {
+				display: none;
+			}
 
 			#nav {
 				display: none;

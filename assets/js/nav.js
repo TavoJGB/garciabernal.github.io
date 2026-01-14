@@ -34,6 +34,37 @@
 		document.body.appendChild(script);
 	}
 
+	function ensureNavWrapper(nav) {
+		if (!nav) return null;
+
+		// Already wrapped.
+		if (nav.closest && nav.closest("#nav-wrapper")) return nav;
+		var parent = nav.parentNode;
+		var nextSibling = nav.nextSibling;
+		if (!parent) return nav;
+
+		var wrapper = document.createElement("div");
+		wrapper.id = "nav-wrapper";
+
+		var container = document.createElement("div");
+		container.className = "container";
+
+		var row = document.createElement("div");
+		row.className = "row";
+
+		var col = document.createElement("div");
+		col.className = "col-12";
+
+		col.appendChild(nav);
+		row.appendChild(col);
+		container.appendChild(row);
+		wrapper.appendChild(container);
+
+		// Insert wrapper where the nav used to be.
+		parent.insertBefore(wrapper, nextSibling);
+		return nav;
+	}
+
 	function injectNav(html) {
 		var nav = document.getElementById("nav");
 		if (!nav) {
@@ -51,6 +82,8 @@
 			loadMainJs();
 			return;
 		}
+
+		ensureNavWrapper(nav);
 
 		fetch("partials/nav.html", { cache: "no-cache" })
 			.then(function (r) {

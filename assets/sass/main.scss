@@ -814,7 +814,20 @@
 
 /* Nav */
 
-	#nav {
+	/* Fallback: before nav.js wraps #nav in #nav-wrapper */
+	#header > #nav {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 1em 0 1em 0;
+		background: var(--colornav);
+		z-index: 1;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	#nav-wrapper {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -823,6 +836,11 @@
 		padding: 1.5em 0 1.5em 0;
 		z-index: 1;
 		overflow: hidden;
+	}
+
+	#nav {
+		text-align: center;
+		width: 100%;
 
 		> ul {
 			line-height: 0px;
@@ -1599,6 +1617,10 @@
 			}
 
 		/* Nav */
+
+			#nav-wrapper {
+				display: none;
+			}
 
 			#nav {
 				display: none;
