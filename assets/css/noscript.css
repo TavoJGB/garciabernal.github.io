@@ -12,6 +12,6 @@
 
 /* Header */
 
-	body.homepage.is-preload #header:after {
-		opacity: 0;
+	body.homepage #header:after {
+		opacity: 1;
 	}

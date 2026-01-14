@@ -2,6 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap");
 @import url("fontawesome-all.min.css");
 
+/* Theme variables */
+
+	:root {
+		--coloruno: #1a1a1a;
+		--colordos: #228947;
+		--colortres: #7c7c7c;
+		--colorboton: #df7366;
+		--colorboton-hover: #ef8376;
+	}
+
 /*
 	Helios by HTML5 UP
 	html5up.net | @ajlkn
@@ -85,7 +95,7 @@ input, select, textarea {
 
 	body {
 		background: #f0f4f4;
-		color: #5b5b5b;
+		color: var(--colortres);
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -158,7 +168,7 @@ input, select, textarea {
 
 	a {
 		color: inherit;
-		border-bottom: solid 1px rgba(128, 128, 128, 0.15);
+		border-bottom: solid 1px var(--colortres);
 		text-decoration: none;
 		-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
@@ -167,7 +177,7 @@ input, select, textarea {
 	}
 
 		a:hover {
-			color: #ef8376;
+			color: var(--colorboton-hover);
 			border-bottom-color: transparent;
 		}
 
@@ -208,8 +218,8 @@ input, select, textarea {
 		top: 4.5em;
 		margin-bottom: 9em;
 		height: 6px;
-		border-top: solid 1px rgba(128, 128, 128, 0.2);
-		border-bottom: solid 1px rgba(128, 128, 128, 0.2);
+		border-top: solid 1px var(--colortres);
+		border-bottom: solid 1px var(--colortres);
 	}
 
 		hr:before, hr:after {
@@ -231,7 +241,7 @@ input, select, textarea {
 		}
 
 	.timestamp {
-		color: rgba(128, 128, 128, 0.75);
+		color: var(--colortres);
 		font-size: 0.8em;
 	}
 
@@ -1879,7 +1889,7 @@ input, select, textarea {
 	}
 
 		ul.divided li {
-			border-top: solid 1px rgba(128, 128, 128, 0.2);
+			border-top: solid 1px var(--colortres);
 			padding-top: 1.5em;
 			margin-top: 1.5em;
 			padding-left: 0;
@@ -1902,7 +1912,7 @@ input, select, textarea {
 
 		ul.menu li {
 			display: inline-block;
-			border-left: solid 1px rgba(128, 128, 128, 0.2);
+			border-left: solid 1px var(--colortres);
 			padding-left: 1.25em;
 			margin-left: 1.25em;
 		}
@@ -1917,7 +1927,7 @@ input, select, textarea {
 
 	ul.icons {
 		position: relative;
-		background: rgba(128, 128, 128, 0.05);
+		background: var(--colortres);
 		border-radius: 4em;
 		display: inline-block;
 		padding: 0.35em 0.75em 0.35em 0.75em;
@@ -1944,7 +1954,7 @@ input, select, textarea {
 			}
 
 				ul.icons li a:hover {
-					color: #ef8376;
+					color: var(--colorboton-hover);
 				}
 
 /* Form */
@@ -1981,7 +1991,7 @@ input, select, textarea {
 		form select:focus,
 		form textarea:focus {
 			background: #fff;
-			border-color: #df7366;
+			border-color: var(--colorboton);
 		}
 
 	form input[type="text"],
@@ -2064,7 +2074,7 @@ input, select, textarea {
 	.button {
 		position: relative;
 		display: inline-block;
-		background: #df7366;
+		background: var(--colorboton);
 		color: #fff;
 		text-align: center;
 		border-radius: 0.5em;
@@ -2086,7 +2096,7 @@ input, select, textarea {
 		button:hover,
 		.button:hover {
 			color: #fff;
-			background: #ef8376;
+			background: var(--colorboton-hover);
 		}
 
 		input[type="button"].alt,
@@ -2094,7 +2104,7 @@ input, select, textarea {
 		input[type="reset"].alt,
 		button.alt,
 		.button.alt {
-			background: #2B252C;
+			background: var(--colordos);
 		}
 
 			input[type="button"].alt:hover,
@@ -2155,7 +2165,7 @@ input, select, textarea {
 		.icon.circled {
 			position: relative;
 			display: inline-block;
-			background: #2b252c;
+			background: #252c26;
 			color: #fff;
 			border-radius: 100%;
 			width: 3em;
@@ -2297,8 +2307,8 @@ input, select, textarea {
 		border-radius: 100%;
 		object-fit: cover;
 		object-position: 50% var(--home-hero-photo-y, 15%);
-		border: solid 3px rgba(255, 255, 255, 0.25);
-		box-shadow: 0 0.35em 1.25em rgba(0, 0, 0, 0.35);
+		border: solid 3px var(--colordos);
+		box-shadow: 0 0.35em 1.25em var(--coloruno);
 	}
 
 	body.homepage #header .home-hero__text {
@@ -2331,27 +2341,15 @@ input, select, textarea {
 
 		body.homepage #header:after {
 			content: '';
-			background: #1C0920;
+			background: var(--coloruno);
 			display: block;
 			position: absolute;
 			left: 0;
 			top: 0;
 			width: 100%;
 			height: 100%;
-			opacity: 0;
-			-moz-transition: opacity 2.5s ease-in-out;
-			-webkit-transition: opacity 2.5s ease-in-out;
-			-ms-transition: opacity 2.5s ease-in-out;
-			transition: opacity 2.5s ease-in-out;
-			-moz-transition-delay: 0.5s;
-			-webkit-transition-delay: 0.5s;
-			-ms-transition-delay: 0.5s;
-			transition-delay: 0.5s;
+			opacity: 1;
 		}
-
-	body.homepage.is-preload #header:after {
-		opacity: 1;
-	}
 
 /* Nav */
 
@@ -2443,7 +2441,7 @@ input, select, textarea {
 			}
 
 			.dropotron li:hover {
-				color: #ef8376;
+				color: var(--colorboton-hover);
 			}
 
 			.dropotron li a, .dropotron li span {
@@ -2527,13 +2525,13 @@ input, select, textarea {
 		position: relative;
 		overflow: hidden;
 		padding: 1em 0 1em 0;
-		background: #2b252c;
+		background: var(--colordos);
 		color: #fff;
 	}
 
 		#footer .icon.circled {
 			background: #fff;
-			color: #2b252c;
+			color: var(--colordos);
 		}
 
 		#footer header {
@@ -2556,7 +2554,7 @@ input, select, textarea {
 
 		#footer .copyright {
 			text-align: center;
-			color: rgba(128, 128, 128, 0.75);
+			color: #fff;
 			font-size: 0.75em;
 			line-height: 1.25em;
 			margin: 0;
@@ -2568,7 +2566,7 @@ input, select, textarea {
 			}
 
 			#footer .copyright a {
-				color: rgba(128, 128, 128, 0.75);
+				color: #fff;
 			}
 
 				#footer .copyright a:hover {
