@@ -322,14 +322,6 @@
 		}
 	}
 
-			border-left: 0;
-			border-right: 0;
-
-		> p {
-			display: block;
-				display: none;
-	}
-
 /* Image */
 
 	.image {
@@ -822,6 +814,7 @@
 		width: 100%;
 		padding: 1em 0 1em 0;
 		background: var(--colornav);
+		color: var(--colornav-texto);
 		z-index: 1;
 		overflow: hidden;
 		text-align: center;
@@ -834,6 +827,7 @@
 		width: 100%;
 		text-align: center;
 		padding: 1.5em 0 1.5em 0;
+		color: var(--colornav-texto);
 		z-index: 1;
 		overflow: hidden;
 	}
@@ -841,6 +835,7 @@
 	#nav {
 		text-align: center;
 		width: 100%;
+		color: var(--colornav-texto);
 
 		> ul {
 			line-height: 0px;
@@ -879,18 +874,53 @@
 				border-radius: 0.5em;
 				padding: 0.85em;
 				border: solid 1px transparent;
-				@include vendor('transition', ('color 0.35s ease-in-out', 'border-color 0.35s ease-in-out'));
+				@include vendor('transition', ('color 0.35s ease-in-out', 'border-color 0.35s ease-in-out', 'background-color 0.35s ease-in-out'));
 
+				&.brand,
+				&.divider {
+					cursor: default;
+				}
+
+				&.current,
 				&.active {
-					border-color: rgba(192, 192, 192, 0.35);
+					background-color: var(--colorcuatro);
+					border-color: transparent;
+					color: #fff;
+					font-weight: 600;
+					> a {
+						color: #fff;
+						font-weight: inherit;
+					}
+				}
+
+				&:not(.brand):not(.divider):not(.current):not(.active):hover,
+				&:not(.brand):not(.divider):not(.current):not(.active):focus-within {
+					border-color: var(--colorcuatro);
+					background-color: rgba(255, 255, 255, 0.08);
+					font-weight: 600;
+					> a {
+						color: var(--colornav-texto);
+						font-weight: inherit;
+					}
 				}
 
 				> a, > span {
 					display: block;
 					color: inherit;
+					font-weight: 600;
 					text-decoration: none;
 					border: 0;
 					outline: 0;
+				}
+
+				> a {
+					@include vendor('transition', ('color 0.35s ease-in-out'));
+
+					&:focus-visible {
+						outline: 2px solid rgba(255, 255, 255, 0.55);
+						outline-offset: 4px;
+						border-radius: 0.35em;
+					}
 				}
 
 				> ul {
@@ -1507,8 +1537,17 @@
 					text-decoration: none;
 					padding: 0.5em;
 					color: #ddd;
+					font-weight: 600;
 					border: 0;
 					border-top: dotted 1px rgba(255, 255, 255, 0.05);
+					@include vendor('transition', ('background-color 0.2s ease-in-out', 'color 0.2s ease-in-out'));
+
+					&:hover,
+					&:focus-visible {
+						background-color: rgba(255, 255, 255, 0.06);
+						color: #fff;
+						outline: 0;
+					}
 
 					&:first-child {
 						border-top: 0;

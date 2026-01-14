@@ -95,7 +95,7 @@
 				// Fallback so the site still works even if fetch fails.
 				injectNav(
 					'<ul>' +
-						'<li><span>Gustavo <span class="versalitas">García Bernal</span></span></li>' +
+						'<li class="brand"><span>Gustavo <span class="versalitas">García Bernal</span></span></li>' +
 						'<li class="divider">|</li>' +
 						'<li><a href="index.html">Home</a></li>' +
 						'<li><a href="research.html">Research</a></li>' +

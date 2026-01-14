@@ -5,11 +5,17 @@
 /* Theme variables */
 
 	:root {
+		/* Colour definitions */
+		--verde: #228947;
+		--naranja: #d58700;
+		--gris: #2e2e2e;
+		--grisoscuro: #202020;
+		--grisclaro: #7c7c7c;
 		/* Main colors */
-		--coloruno: #1a1a1a;
-		--colordos: #323232;
-		--colortres: #7c7c7c;
-		--colorcuatro: #228947;
+		--coloruno: var(--gris);
+		--colordos: var(--grisoscuro);
+		--colortres: var(--grisclaro);
+		--colorcuatro: var(--verde);
 		/* Navigation menu */
 		--colornav: var(--colordos);
 		--colornav-texto: #ffffff;
@@ -136,10 +142,11 @@ input, select, textarea {
 	}
 
 	.versalitas {
+		/* color: var(--colorcuatro); */
 		font-variant: small-caps;
 		font-variant-caps: small-caps;
 		font-weight: 400;
-		font-size: 1.05em;
+		font-size: 1.1em;
 		display: inline-block;
 		transform: scaleX(1.1);
 		transform-origin: left;
@@ -2376,6 +2383,7 @@ input, select, textarea {
 		width: 100%;
 		padding: 1em 0 1em 0;
 		background: var(--colornav);
+		color: var(--colornav-texto);
 		z-index: 1;
 		overflow: hidden;
 		text-align: center;
@@ -2388,6 +2396,7 @@ input, select, textarea {
 		width: 100%;
 		padding: 1em 0 1em 0;
 		background: var(--colornav);
+		color: var(--colornav-texto);
 		z-index: 1;
 		overflow: hidden;
 	}
@@ -2395,6 +2404,7 @@ input, select, textarea {
 	#nav {
 		text-align: center;
 		width: 100%;
+		color: var(--colornav-texto);
 	}
 
 		#nav > ul {
@@ -2428,22 +2438,68 @@ input, select, textarea {
 				padding: 0.85em;
 				line-height: 1.2em;
 				border: solid 1px transparent;
-				-moz-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
-				-webkit-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
-				-ms-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
-				transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
+				-moz-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+				-webkit-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+				-ms-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+				transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out, background-color 0.35s ease-in-out;
 			}
 
+				#nav > ul > li.brand,
+				#nav > ul > li.divider {
+					cursor: default;
+				}
+
+				#nav > ul > li.current,
 				#nav > ul > li.active {
-					border-color: rgba(192, 192, 192, 0.35);
+					background-color: var(--colorcuatro);
+					border-color: transparent;
+					color: #fff;
+					font-weight: 600;
+				}
+
+				#nav > ul > li:not(.brand):not(.divider):not(.current):not(.active):hover,
+				#nav > ul > li:not(.brand):not(.divider):not(.current):not(.active):focus-within {
+					border-color: var(--colorcuatro);
+					/* background-color: var(--colordos); */
+					font-weight: 600;
+				}
+
+				#nav > ul > li:not(.brand):not(.divider):not(.current):not(.active):hover > a,
+				#nav > ul > li:not(.brand):not(.divider):not(.current):not(.active):focus-within > a {
+					color: var(--colornav-texto);
+					font-weight: inherit;
+				}
+
+				#nav > ul > li.current > a,
+				#nav > ul > li.active > a {
+					color: #fff;
+					font-weight: inherit;
+				}
+
+				#nav > ul > li.active {
+					border-color: transparent;
 				}
 
 				#nav > ul > li > a, #nav > ul > li > span {
 					display: block;
 					color: inherit;
+					font-weight: 600;
 					text-decoration: none;
 					border: 0;
 					outline: 0;
+				}
+
+				#nav > ul > li > a {
+					-moz-transition: color 0.35s ease-in-out;
+					-webkit-transition: color 0.35s ease-in-out;
+					-ms-transition: color 0.35s ease-in-out;
+					transition: color 0.35s ease-in-out;
+				}
+
+				#nav > ul > li > a:focus-visible {
+					outline: 2px solid rgba(255, 255, 255, 0.55);
+					outline-offset: 4px;
+					border-radius: 0.35em;
 				}
 
 				#nav > ul > li > ul {
@@ -3019,7 +3075,7 @@ input, select, textarea {
 						font-style: normal;
 						content: '\f0c9';
 						color: #fff;
-						color: rgba(255, 255, 255, 0.75);
+						color: #fff;
 						text-align: center;
 						display: block;
 						font-size: 14px;
@@ -3079,9 +3135,21 @@ input, select, textarea {
 					text-decoration: none;
 					padding: 0.5em;
 					color: #ddd;
+					font-weight: 600;
 					border: 0;
 					border-top: dotted 1px rgba(255, 255, 255, 0.05);
+					-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+					-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+					-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+					transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 				}
+
+					#navPanel .link:hover,
+					#navPanel .link:focus-visible {
+						background-color: rgba(255, 255, 255, 0.06);
+						color: #fff;
+						outline: 0;
+					}
 
 					#navPanel .link:first-child {
 						border-top: 0;
