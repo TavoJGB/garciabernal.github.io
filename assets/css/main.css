@@ -1802,13 +1802,13 @@ input, select, textarea {
 	}
 
 	header {
-		margin: 0 0 1em 0;
+		margin: 3em 0 2em 0;
 	}
 
 		header > p {
 			display: block;
 			font-size: 1.5em;
-			margin: 1em 0 2em 0;
+			margin: 0.75em 0 1.25em 0;
 			line-height: 1.5em;
 			text-align: inherit;
 		}
@@ -2299,6 +2299,7 @@ input, select, textarea {
 
 		#header header {
 			display: inline-block;
+			margin: 0;
 		}
 
 		/* Semi-transparent panel behind header text for readability */
@@ -2717,7 +2718,15 @@ input, select, textarea {
 	}
 
 		#main section:first-of-type {
-			padding-top: 2em;
+			padding-top: 0em;
+		}
+
+		body.no-sidebar #main > header:first-child {
+			margin-top: 0.0em;
+		}
+
+		body.no-sidebar #main section:first-of-type {
+			padding-top: 0.0em;
 		}
 
 /* Footer */
@@ -3326,6 +3335,18 @@ input, select, textarea {
 
 			.wrapper {
 				padding: 3em 1em 3em 1em;
+			}
+
+			body.no-sidebar .wrapper.style1 {
+				padding-top: 0em;
+			}
+
+			body.left-sidebar .wrapper.style1 {
+				padding-top: 0em;
+			}
+
+			body.left-sidebar .wrapper.style1 {
+				padding-top: 0em;
 			}
 
 		/* Header */
