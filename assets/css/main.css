@@ -7,7 +7,7 @@
 	:root {
 		/* Colour definitions */
 		--verde: #228947;
-		--naranja: #d58700;
+		--naranja: #ffa02b;
 		--gris: #2e2e2e;
 		--grisoscuro: #202020;
 		--grisclaro: #7c7c7c;
@@ -19,7 +19,7 @@
 		/* Navigation menu */
 		--colornav: var(--colordos);
 		--colornav-texto: #ffffff;
-		--colornav-texto-activo: #ffffff;
+		--colornav-texto-activo: var(--colordos);
 		/* Footer */
 		--colorpie: var(--colordos);
 		--colorpie-texto: #ffffff;
@@ -138,8 +138,8 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
-		color: #483949;
-		line-height: 1.25em;
+		color: var(--colordos);
+		/* line-height: 1.25em; */
 	}
 
 	.versalitas {
@@ -2085,6 +2085,61 @@ input, select, textarea {
 
 			table.default tfoot {
 				border-top: solid 2px #e5e5e5;
+			}
+
+	/* CV table (two-column layout similar to LaTeX tabularx) */
+
+		.cv-table {
+			width: 100%;
+			color: var(--coloruno);
+		}
+
+			.cv-table td {
+				vertical-align: top;
+				padding: 0.15em 0;
+			}
+
+				.cv-table tr + tr td {
+					padding-top: 0.9em;
+				}
+
+				.cv-table td.cv-whenwhere {
+					width: 11em;
+					text-align: right;
+					padding-right: 1.25em;
+					white-space: nowrap;
+					/* color: var(--colortres); */
+				}
+
+				.cv-table .cv-place {
+					margin-top: 0.15em;
+					font-style: italic;
+				}
+
+				.cv-table .cv-institution {
+					font-weight: 600;
+				}
+
+				.cv-table .cv-degree {
+					margin-top: 0.15em;
+				}
+
+			@media screen and (max-width: 736px) {
+				.cv-table td,
+				.cv-table tr {
+					display: block;
+					width: 100%;
+				}
+
+				.cv-table td.cv-whenwhere {
+					text-align: left;
+					padding-right: 0;
+					white-space: normal;
+				}
+
+				.cv-table tr + tr td {
+					padding-top: 0.6em;
+				}
 			}
 
 /* Button */
