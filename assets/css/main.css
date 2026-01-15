@@ -2137,10 +2137,15 @@ input, select, textarea {
 				}
 
 			@media screen and (max-width: 736px) {
-				.cv-table td,
+				/* Keep the CV table as a true two-column table on mobile. */
 				.cv-table tr {
-					display: block;
-					width: 100%;
+					display: table-row;
+					width: auto;
+				}
+
+				.cv-table td {
+					display: table-cell;
+					width: auto;
 				}
 
 				.cv-table td.cv-whenwhere {
