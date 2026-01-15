@@ -1806,6 +1806,14 @@ input, select, textarea {
 		margin: 3em 0 2em 0;
 	}
 
+	#main > section > header {
+		margin: 1.25em 0 0.35em 0;
+	}
+
+	#main > section:first-of-type > header:first-child {
+		margin-top: 0.25em;
+	}
+
 		header > p {
 			display: block;
 			font-size: 1.5em;
