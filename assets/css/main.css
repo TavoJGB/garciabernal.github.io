@@ -15,10 +15,11 @@
 		--coloruno: var(--gris);
 		--colordos: var(--grisoscuro);
 		--colortres: var(--grisclaro);
-		--colorcuatro: var(--verde);
+		--colorcuatro: var(--naranja);
 		/* Navigation menu */
 		--colornav: var(--colordos);
 		--colornav-texto: #ffffff;
+		--colornav-texto-activo: #ffffff;
 		/* Footer */
 		--colorpie: var(--colordos);
 		--colorpie-texto: #ffffff;
@@ -142,7 +143,6 @@ input, select, textarea {
 	}
 
 	.versalitas {
-		/* color: var(--colorcuatro); */
 		font-variant: small-caps;
 		font-variant-caps: small-caps;
 		font-weight: 400;
@@ -150,6 +150,11 @@ input, select, textarea {
 		display: inline-block;
 		transform: scaleX(1.1);
 		transform-origin: left;
+	}
+
+	.apellidos {
+		color: var(--colorcuatro);
+		font-weight: 800;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2266,6 +2271,11 @@ input, select, textarea {
 				/* letter-spacing: 0.05em; */
 			}
 
+			#header h1 .apellidos {
+				color: var(--colorcuatro);
+				font-weight: 800;
+			}
+
 		#header .button {
 			display: inline-block;
 			border-radius: 100%;
@@ -2320,7 +2330,7 @@ input, select, textarea {
 		border-radius: 100%;
 		object-fit: cover;
 		object-position: 50% var(--home-hero-photo-y, 15%);
-		border: solid 3px var(--colordos);
+		border: solid 5px var(--colordos);
 		box-shadow: 0 0.35em 1.25em var(--coloruno);
 	}
 
@@ -2472,7 +2482,7 @@ input, select, textarea {
 
 				#nav > ul > li.current > a,
 				#nav > ul > li.active > a {
-					color: #fff;
+					color: var(--colornav-texto-activo);
 					font-weight: inherit;
 				}
 
@@ -2659,7 +2669,7 @@ input, select, textarea {
 			}
 
 				#footer .copyright a:hover {
-					color: rgba(212, 212, 212, 0.85);
+					color: var(--colorcuatro);
 				}
 
 /* Carousel */
