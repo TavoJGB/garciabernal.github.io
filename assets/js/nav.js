@@ -94,6 +94,9 @@
 			.catch(function () {
 				// Fallback so the site still works even if fetch fails.
 				injectNav(
+					'<span class="nav-logo">' +
+						'<img src="images/scpo_emblema.png" alt="University logo" />' +
+					'</span>' +
 					'<ul>' +
 						'<li class="brand"><span>Gustavo <span class="versalitas">García Bernal</span></span></li>' +
 						'<li class="divider">|</li>' +
