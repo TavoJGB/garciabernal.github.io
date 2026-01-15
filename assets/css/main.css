@@ -2217,9 +2217,9 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/header.jpg");
-		background-size: cover;
-		background-position: center center;
+		background-image: url("../../images/collage_eco.jpg");
+		background-size: contain;
+		background-position: 50% var(--header-y, 12%);
 		background-attachment: fixed;
 		color: #fff;
 		text-align: center;
@@ -2246,6 +2246,15 @@ input, select, textarea {
 			display: inline-block;
 		}
 
+		/* Semi-transparent panel behind header text for readability */
+		body:not(.homepage) #header .inner > header {
+			background: rgba(32, 32, 32, 0.7);
+			border: solid 1px rgba(255, 255, 255, 0.18);
+			border-radius: 0.75em;
+			/* box-shadow: 0 0.35em 1.25em rgba(0, 0, 0, 0.25); */
+			padding: 0.6em 1.25em;
+		}
+
 			#header header > p {
 				font-size: 1.25em;
 				margin: 0;
@@ -2253,8 +2262,13 @@ input, select, textarea {
 
 		#header h1 {
 			color: #fff;
-			font-size: 3em;
+			font-size: 4em;
 			line-height: 1em;
+		}
+
+		#header h1,
+		#header header > p {
+			text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 		}
 
 			#header h1 a {
@@ -2338,6 +2352,16 @@ input, select, textarea {
 		flex: 0 1 auto;
 	}
 
+	body.homepage #header .home-hero__text {
+		background: rgba(32, 32, 32, 0.62);
+		border: solid 1px rgba(255, 255, 255, 0.14);
+		border-radius: 0.9em;
+		box-shadow: 0 0.35em 1.25em rgba(0, 0, 0, 0.25);
+		padding: 1.1em 1.25em;
+		-webkit-backdrop-filter: blur(6px);
+		backdrop-filter: blur(6px);
+	}
+
 	body.homepage #header .home-hero__text > p {
 		font-size: 1.1em;
 		line-height: 1.55em;
@@ -2367,6 +2391,10 @@ input, select, textarea {
 			body.homepage #header .home-hero__photo img {
 				width: 120px;
 				height: 120px;
+			}
+
+			body.homepage #header .home-hero__text {
+				padding: 0.9em 1em;
 			}
 
 		}
