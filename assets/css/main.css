@@ -3355,7 +3355,7 @@ input, select, textarea {
 			}
 
 			body.no-sidebar .wrapper.style1 {
-				padding-top: 0em;
+				padding-top: 2em;
 			}
 
 		/* Header */
@@ -3370,6 +3370,30 @@ input, select, textarea {
 					padding-left: 1em;
 					padding-right: 1em;
 				}
+
+			/* Non-homepage pages: center title within header image */
+			body:not(.homepage) #header {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				min-height: 15vh;
+				padding: 0;
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+
+			body:not(.homepage) #header:before {
+				display: none;
+			}
+
+			body:not(.homepage) #header .inner {
+				flex: 1 0 auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 1.75em 1em 1.25em 1em;
+			}
 
 				#header header > p {
 					font-size: 1em;
