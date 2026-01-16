@@ -1958,7 +1958,7 @@ input, select, textarea {
 
 	ul.icons {
 		position: relative;
-		background: var(--colortres);
+		/* background: var(--colortres); */
 		border-radius: 4em;
 		display: inline-block;
 		padding: 0.35em 0.75em 0.35em 0.75em;
@@ -2443,6 +2443,11 @@ input, select, textarea {
 		opacity: 0.92;
 	}
 
+	body.homepage #header .home-hero__text > ul.icons {
+		display: table;
+		margin: 0em auto 0 auto;
+	}
+
 		body.homepage #header h1 {
 			font-size: 2.5em;
 		}
@@ -2774,6 +2779,29 @@ input, select, textarea {
 			text-align: center;
 		}
 
+			#footer ul.icons.footer-icons {
+				font-size: 0.9em;
+				padding: 0;
+				margin: 0;
+				white-space: nowrap;
+				vertical-align: middle;
+			}
+
+			/* Prevent ul.menu li styles from affecting the nested icon <li> items */
+			#footer .copyright ul.menu ul.icons.footer-icons li {
+				display: inline-block;
+				border-left: 0;
+				padding-left: 0;
+				margin-left: 0;
+				padding-top: 0;
+			}
+
+			#footer ul.icons.footer-icons li a {
+				width: 1.9em;
+				height: 1.9em;
+				line-height: 1.9em;
+			}
+
 			#footer .contact p {
 				text-align: center;
 				margin: 0 0 3em 0;
@@ -2789,7 +2817,42 @@ input, select, textarea {
 		}
 
 			#footer .copyright ul.menu {
+				height: auto;
+				line-height: inherit;
+			}
+
+			#footer .copyright ul.menu > li {
+				vertical-align: middle;
+			}
+
+			#footer .copyright ul.menu > li.menu-icons {
+				line-height: 0;
+			}
+
+			#footer .copyright ul.menu {
 				margin: 0;
+			}
+
+			/* Use fixed-height separators in the footer (icons make <li> taller). */
+			@media screen and (min-width: 737px) {
+				#footer .copyright ul.menu > li {
+					border-left: 0;
+				}
+
+				#footer .copyright ul.menu > li + li {
+					position: relative;
+				}
+
+				#footer .copyright ul.menu > li + li:before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 50%;
+					width: 1px;
+					height: 1em;
+					background: var(--colorpie-texto);
+					transform: translateY(-50%);
+				}
 			}
 
 			#footer .copyright a {
