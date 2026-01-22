@@ -1,26 +1,14 @@
-# Permitir buscadores legítimos primero
+# Permitir buscadores específicos
 User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
+User-agent: Googlebot-Image  
 User-agent: Bingbot
-Allow: /
-
 User-agent: DuckDuckBot
-Allow: /
-
 User-agent: Slurp
-Allow: /
-
 User-agent: YandexBot
-Allow: /
-
 User-agent: EcosiaBot
 Allow: /
 
-# Bloquear todos los demás bots (scrapers, IA, etc.)
+# Bloquear todo lo demás
 User-agent: *
 Disallow: /
 
