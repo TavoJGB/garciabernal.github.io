@@ -1,15 +1,4 @@
-# Permitir buscadores específicos
-User-agent: Googlebot
-User-agent: Googlebot-Image  
-User-agent: Bingbot
-User-agent: DuckDuckBot
-User-agent: Slurp
-User-agent: YandexBot
-User-agent: EcosiaBot
-Allow: /
-
-# Bloquear todo lo demás
 User-agent: *
-Disallow: /
+Allow: /
 
 Sitemap: https://garciabernal.github.io/sitemap.xml
