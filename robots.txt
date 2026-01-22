@@ -1,0 +1,28 @@
+# Bloquear todos los bots por defecto (scrapers, IA, etc.)
+User-agent: *
+Disallow: /
+
+# Permitir solo buscadores legítimos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Ecosia usa Bing, pero por si acaso
+User-agent: EcosiaBot
+Allow: /
+
+Sitemap: https://garciabernal.github.io/sitemap.xml
